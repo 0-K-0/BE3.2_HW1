@@ -35,8 +35,8 @@ app.get("/books", (req, res) => {
 });
 //4
 const todos = [{ id: 1, title: "Water the plants", day: "Saturday" }];
-app.post("/totdos", (req, res) => {
-  const newTodo = res.body;
+app.post("/todos", (req, res) => {
+  const newTodo = req.body;
   if (!newTodo.id || !newTodo.title || !newTodo.day) {
     res.status(404).json({ error: "id,title and day is required" });
   } else {
